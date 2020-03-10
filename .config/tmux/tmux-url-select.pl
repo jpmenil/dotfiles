@@ -13,7 +13,7 @@ use constant COMMAND => 'xdg-open %s';
 use constant YANK_COMMAND => 'echo %s | xclip -i';
 
 use constant SHOW_STATUS_BAR => 1;
-use constant VERBOSE_MESSAGES => 1;
+use constant VERBOSE_MESSAGES => 0;
 use constant TMUX_WINDOW_TITLE => 'Select URL';
 use constant TMUX_WINDOW_ID => 9999;
 use constant HIDE_WINDOW => 1;
