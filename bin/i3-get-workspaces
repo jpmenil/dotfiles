@@ -1,0 +1,7 @@
+#!/bin/sh
+
+#echo $(i3-msg -t get_workspaces | jq -r "[.[].name]|@tsv")
+
+#i3-msg -t get_workspaces | jq -r '[.[] | select(.focused!=true) | .name]|@tsv'
+
+echo $(i3-msg -t get_workspaces | jq -r '[.[] | select(.focused!=true) | .name] | join(" | ")')

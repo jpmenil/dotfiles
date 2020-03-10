@@ -1,0 +1,157 @@
+############
+# Personal #
+############
+
+IMAPAccount personal
+Host imap.gmail.com
+User jpmenil@gmail.com
+PassCmd "gpg2 -q --for-your-eyes-only --no-tty -d ~/.config/credentials/mail.gpg"
+SSLType IMAPS
+PipelineDepth 1
+#CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+IMAPStore personal-remote
+Account personal
+
+MaildirStore personal-local
+Subfolders Verbatim
+# The trailing "/" is important
+Path ~/.mail/personal/
+Inbox ~/.mail/personal/Inbox
+
+Channel personal-drafts
+Master :personal-remote:"[Gmail]/Drafts"
+Slave :personal-local:Drafts
+
+Channel personal-sent
+Master :personal-remote:"[Gmail]/Sent Mail"
+Slave :personal-local:Sent
+
+Channel personal-spam
+Master :personal-remote:"[Gmail]/Spam"
+Slave :personal-local:Spam
+
+Channel personal-trash
+Master :personal-remote:"[Gmail]/Trash"
+Slave :personal-local:Trash
+
+Channel personal-inbox
+Master :personal-remote:
+Slave :personal-local:
+Patterns * ![Gmail]* !Drafts !Sent !Spam !Trash
+
+Remove Slave
+Expunge Both
+
+Create slave
+SyncState *
+
+Group personal
+Channel personal-drafts
+Channel personal-sent
+Channel personal-spam
+Channel personal-trash
+Channel personal-inbox
+
+##########
+# Orange #
+##########
+
+IMAPAccount orange
+Host imap.orange.fr
+User jpmenil@wanadoo.fr
+PassCmd "gpg2 -q --for-your-eyes-only --no-tty -d ~/.config/credentials/orange.gpg"
+SSLType IMAPS
+PipelineDepth 1
+#CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+IMAPStore orange-remote
+Account orange
+
+MaildirStore orange-local
+Subfolders Verbatim
+# The trailing "/" is important
+Path ~/.mail/orange/
+Inbox ~/.mail/orange/Inbox
+
+Channel orange-drafts
+Master :orange-remote:"INBOX/DRAFT"
+Slave :orange-local:Drafts
+
+Channel orange-sent
+Master :orange-remote:"INBOX/OUTBOX"
+Slave :orange-local:Sent
+
+Channel orange-spam
+Master :orange-remote:"INBOX/QUARANTAINE"
+Slave :orange-local:Spam
+
+Channel orange-trash
+Master :orange-remote:"INBOX/TRASH"
+Slave :orange-local:Trash
+
+Channel orange-inbox
+Master :orange-remote:
+Slave :orange-local:
+Patterns * !Drafts !Sent !Spam !Trash !DRAFT !OUTBOX !QUARANTAINE !TRASH
+
+Remove Slave
+Expunge Both
+
+Create slave
+SyncState *
+
+Group orange
+Channel orange-drafts
+Channel orange-sent
+Channel orange-spam
+Channel orange-trash
+Channel orange-inbox
+
+############
+# Exoscale #
+############
+
+#IMAPAccount exoscale
+#Host imap.gmail.com
+#User jpmenil@exoscale.ch
+#PassCmd "gpg2 -q --for-your-eyes-only --no-tty -d ~/.config/credentials/exoscale.gpg"
+#SSLType IMAPS
+#PipelineDepth 1
+#
+#IMAPStore exoscale-remote
+#Account exoscale
+#
+#MaildirStore exoscale-local
+#Subfolders Verbatim
+#Path ~/.mail/exoscale/
+#Inbox ~/.mail/exoscale/Inbox
+#
+#Channel exoscale-drafts
+#Master :exoscale-remote:"[Gmail]/Drafts"
+#Slave :exoscale-local:Drafts
+#
+#Channel exoscale-sent
+#Master :exoscale-remote:"[Gmail]/Sent Mail"
+#Slave :exoscale-local:Sent
+#
+#Channel exoscale-trash
+#Master :exoscale-remote:"[Gmail]/Bin"
+#Slave :exoscale-local:Trash
+#
+#Channel exoscale-inbox
+#Master :exoscale-remote:
+#Slave :exoscale-local:
+#Patterns * ![Gmail]* !Drafts !Sent !Spam !Trash
+#
+#Remove Slave
+#Expunge Both
+#
+#Create slave
+#SyncState *
+#
+#Group exoscale
+#Channel exoscale-drafts
+#Channel exoscale-sent
+#Channel exoscale-trash
+#Channel exoscale-inbox

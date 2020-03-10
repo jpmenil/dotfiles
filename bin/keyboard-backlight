@@ -1,0 +1,31 @@
+#!/bin/zsh
+
+BRIGHTNESS=$(cat /sys/class/leds/smc::kbd_backlight/brightness)
+MAX_BRIGHTNESS=$(cat /sys/class/leds/smc::kbd_backlight/max_brightness)
+INCREMENT=15
+
+SET_VALUE=0
+
+case $1 in
+    up)
+        if (( $BRIGHTNESS < $MAX_BRIGHTNESS)); then
+            let BRIGHTNESS=$BRIGHTNESS+$INCREMENT
+            echo "echo $BRIGHTNESS > /sys/class/leds/smc::kbd_backlight/brightness" | sudo zsh
+        fi
+        ;;
+    down)
+        if (( $BRIGHTNESS >= $INCREMENT )); then
+            let BRIGHTNESS=$BRIGHTNESS-$INCREMENT
+            echo "echo $BRIGHTNESS > /sys/class/leds/smc::kbd_backlight/brightness" | sudo zsh
+        fi
+        ;;
+    total)
+        echo "echo $MAX_BRIGHTNESS > /sys/class/leds/smc::kbd_backlight/brightness" | sudo zsh
+        ;;
+    off)
+        echo "echo 0 > /sys/class/leds/smc::kbd_backlight/brightness" | sudo zsh
+        ;;
+    *)
+        echo "Use: keyboard-backlight up|down|total|off"
+        ;;
+esac

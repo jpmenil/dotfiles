@@ -1,0 +1,33 @@
+#!/bin/zsh
+
+BRIGHTNESS=$(cat /sys/class/backlight/intel_backlight/brightness)
+MAX_BRIGHTNESS=$(cat /sys/class/backlight/intel_backlight/max_brightness)
+
+INCREMENT=15
+
+case $1 in
+    up)
+        if (( $BRIGHTNESS < $MAX_BRIGHTNESS )); then
+            let BRIGHTNESS=$BRIGHTNESS+$INCREMENT
+            echo $BRIGHTNESS | sudo tee /sys/class/backlight/intel_backlight/brightness
+        fi
+        ;;
+    down)
+        if (( $BRIGHTNESS > $INCREMENT )); then
+            let BRIGHTNESS=$BRIGHTNESS-$INCREMENT
+            echo $BRIGHTNESS | sudo tee /sys/class/backlight/intel_backlight/brightness
+        fi
+        ;;
+    start)
+        echo 105 | sudo tee /sys/class/backlight/intel_backlight/brightness
+        ;;
+    total)
+        echo $MAX_BRIGHTNESS | sudo tee /sys/class/backlight/intel_backlight/brightness
+        ;;
+    off)
+        echo 0 | sudo tee /sys/class/backlight/intel_backlight/brightness
+        ;;
+    *)
+    echo "Use: screen-backlight up|down|total|off"
+    ;;
+esac

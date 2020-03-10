@@ -1,0 +1,9 @@
+#!/bin/sh
+
+SSID=$(connmanctl services | grep \* | awk '{print $3}')
+if [ -n "$SSID" ]; then
+    STRENGHT=$(connmanctl services $SSID| grep Strength | awk '{print $3}')
+else
+    STRENGHT=0
+fi
+echo $STRENGHT%

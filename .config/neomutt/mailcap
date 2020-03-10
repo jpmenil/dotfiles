@@ -1,0 +1,19 @@
+# PDF
+application/pdf; zathura %s
+image/pdf; zathura %s
+
+# Images
+image/bmp;feh %s
+image/gif;feh %s
+image/libm;feh %s
+image/jpg;feh %s
+image/jpeg;feh %s
+image/png;feh %s
+image/tiff;feh %s
+image/x-png;feh %s
+
+# Html
+text/html; w3m -I %{charset} -T text/html; copiousoutput;
+
+# Office
+applica/vnd.openxm; libreoffice %s

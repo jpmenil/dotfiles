@@ -1,0 +1,146 @@
+
+alias 0685788172@orange.fr 0685788172@orange.fr
+alias Academia <updates@academia-mail.com>
+alias adams-luisa Luisa Adams <fernanda.medeiros@ses.pb.gov.br>
+alias admin-bdu BdU Consulting AG admin <Admin@bdu.ch>
+alias admin-russell Russell King - ARM Linux admin <linux@armlinux.org.uk>
+alias aeal-avon avon aeal <real025@vera.com.uy>
+alias ahern-david David Ahern <dahern@digitalocean.com>
+alias Airbnb <discover@airbnb.com>
+alias Airfrance <nore1882@basis.enjoy-offer.com>
+alias amenil <amenil@wanadoo.fr>
+alias AngelList <team@angel.co>
+alias arch-devops-eli Eli Schwartz via arch-devops <arch-devops@lists.archlinux.org>
+alias arch-devops-lukas Lukas Fleischer via arch-devops <arch-devops@lists.archlinux.org>
+alias arch-devops-sven-hendrik Sven-Hendrik Haase via arch-devops <arch-devops@lists.archlinux.org>
+alias Association <belle@caamarche.eu>
+alias bank!-hello Hello bank! <client@notification.hellobank.com>
+alias bank!-hello Hello bank! <client@vous.hellobank.fr>
+alias bank!-hello Hello Bank! <client@vous.hellobank.fr>
+alias bank!-hello Hello bank! <contact@messagerie-client.bnpparibas.com>
+alias barber-tsadik-smadar Smadar Barber-Tsadik <info@fibi.com>
+alias Binance <do_not_reply@mailer.binance.com>
+alias blanc-yoan Yoan Blanc <yoan@dosimple.ch>
+alias booking.com-hôtel Hôtel Royal via Booking.com <3456029374-fszk.hzek.dkaz.sxtw@property.booking.com>
+alias booking.com-tivoli Tivoli Hotel via Booking.com <3548822197-vkx6.akrk.7fat.c5gv@property.booking.com>
+alias bot-lets Lets Encrypt Expiry Bot <expiry@letsencrypt.org>
+alias brothier-marc-aurèle Marc-Aurèle Brothier <marc-aurele@brothier.org>
+alias brothier-marc-aurèle Marc-Aurèle Brothier <m@brothier.org>
+alias buelter-clint Clint Buelter <clinton.buelter@elastic.co>
+alias bugzilla@redhat.com bugzilla@redhat.com
+alias carty-vessela Vessela Carty <vessela.carty@exoscale.ch>
+alias celine.menil <celine.menil@orange.fr>
+alias ClouDNS <support@cloudns.net>
+alias cohen-amit Amit Cohen <amitc@mellanox.com>
+alias contact.center@swisscom.com contact.center@swisscom.com
+alias contact <info@rarmailing.info>
+alias danemark-eelv EELV Danemark <danemark@eelv.fr>
+alias Deezer <listen@deezer.com>
+alias Degoo <no-reply@degoo.com>
+alias demaison-gl005 GL005 PKZ Lausanne / Anthony Demaison <anthony.demaison@pkz.ch>
+alias desmond-favor Favor Desmond <contecindy5@gmail.com>
+alias dewarrat-gilbert Gilbert Dewarrat <Gilbert.Dewarrat@bdu.ch>
+alias easyJet <bookings@email.easyJet.com>
+alias e-Boks <besked@advisering.e-boks.dk>
+alias evensen-kristian Kristian Evensen <kristian.evensen@gmail.com>
+alias familiales-allocations Allocations Familiales <caf@centrepatronal.ch>
+alias ffs-sbb SBB CFF FFS <sbbclient@sbb.ch>
+alias Firefox <Mozilla@e.mozilla.org>
+alias Fnac.ch <info@fnac.ch>
+alias futures-kraken Kraken Futures <no-reply@futures.kraken.com>
+alias garcia-laura Laura Garcia <nevola@gmail.com>
+alias GitGuardian <security@mail.gitguardian.com>
+alias GitLab <gitlab@mg.gitlab.com>
+alias Globus <newsletter@globus.ch>
+alias gloriaable11@hotmail.com <gloriaable11@hotmail.com>
+alias GOG.COM <newsletter@email2.gog.com>
+alias Google <no-reply@accounts.google.com>
+alias google slides)-marc-aurèle Marc-Aurèle Brothier (via Google Slides) <ma.brothier@gmail.com>
+alias hargrett-jean Jean Hargrett <jeanhargrett@aol.com>
+alias hellobank-banque Banque HelloBank <hellobank@domiciliationbancaire.fr>
+alias !-hello Hello bank ! <hellobank@domiciliationbancaire.fr>
+alias HELSANA <helsana.news@helsana.ch>
+alias herring-rob Rob Herring <robh+dt@kernel.org>
+alias heyse-don Don Heyse <dheyse@hotmail.com>
+alias HiFiBerry <info@hifiberry.com>
+alias HiFiBerry <support@hifiberry.com>
+alias høiland-jørgensen-toke Toke Høiland-Jørgensen <toke@redhat.com>
+alias Hired <team@hired.com>
+alias HitBTC <no-reply@hitbtc.com>
+alias hraduyan-nathalie nathalie HRADUYAN <nathalie.hraduyan@gmail.com>
+alias intel-uncubed Uncubed Intel <team@email.uncubed.com>
+alias jobs-uncubed Uncubed Jobs <team@email.uncubed.com>
+alias kadlecsik-jozsef Jozsef Kadlecsik <kadlec@netfilter.org>
+alias kochan-vadym Vadym Kochan <vadym.kochan@plvision.eu>
+alias Kraken <email@email.kraken.com>
+alias laura-magurano Magurano Laura <Laura.Magurano@pkz.ch>
+alias lausanne-005 005 PKZ Lausanne <lausanne@pkz.ch>
+alias leforum@phonandroid.com <leforum@phonandroid.com>
+alias letranger-alliance Alliance Solidaire des Français de lEtranger <contact@alliancesolidaire.org>
+alias limitless-accor Accor Hotels - Live Limitless <news.accorhotels@accor-mail.com>
+alias limitless-all ALL - Accor Live Limitless <news.all@accor-mail.com>
+alias létranger-français Français de létranger <francaisdeletranger@en-marche.fr>
+alias létranger-union Union des Français de létranger <newsletter@news.ufe.org>
+alias lunn-andrew Andrew Lunn <andrew@lunn.ch>
+alias mallez-amaury Amaury Mallez <amaury.mallez@bcv.ch>
+alias membership-comicvine ComicVine Membership <membership@comicvine.gamespot.com>
+alias menil-jean-philippe Jean-Philippe Menil <jean-philippe.menil@bcv.ch>
+alias menil-jean-philippe Jean-Philippe Menil <jpmenil@gmail.com>
+alias miller-david David Miller <davem@davemloft.net>
+alias ménil-alain Alain Ménil <amenil@wanadoo.fr>
+alias ménil-céline Céline Ménil <celine.menil@orange.fr>
+alias ménil-jean-philippe Jean-Philippe Ménil <jpmenil@gmail.com>
+alias mobile-free Free Mobile <freemobile@free-mobile.fr>
+alias mon_espace@t-l.ch mon_espace@t-l.ch
+alias nantaise-la La Mystérieuse Librairie Nantaise <mysterieuselibrairienantaise@gmail.com>
+alias nat-beth Beth Nat <am19040@gmail.com>
+alias no-reply@greenhouse.io no-reply@greenhouse.io
+alias no-reply@wikimedia.org no-reply@wikimedia.org
+alias notifications-gitter Gitter Notifications <support@gitter.im>
+alias notify@dl.free.fr notify@dl.free.fr
+alias office@mobility.ch office@mobility.ch
+alias opensubtitles.org <robot@opensubtitles.org>
+alias ouwehand-rita Rita Ouwehand <Rita.Ouwehand@bdu.ch>
+alias OVHcloud <info@news.ovh.com>
+alias OVHcloud <info@services.ovh.com>
+alias OVH.com <ovh@satisfaction.ovh.com>
+alias ovh-service Service Client OVH <support@ovh.com>
+alias pirko-jiri Jiri Pirko <jiri@resnulli.us>
+alias program-windows Windows Insider Program <windowsinsiderprogram@e-mail.microsoft.com>
+alias raindrop.io-rustem Rustem from Raindrop.io <info@raindrop.io>
+alias rajbaoui-chiraz Chiraz Rajbaoui <Chiraz.Rajbaoui@bdu.ch>
+alias rastogi-ayushi Ayushi Rastogi <a.rastogi@tudelft.nl>
+alias RealFly <reservation@realfly.ch>
+alias recommandons-les Les offres demploi que nous vous recommandons <LesJeudisJobRecommendations@sites.careerbuilder.com>
+alias Root-Me <no-reply@root-me.org>
+alias royal-hotel Hotel Royal <customer.service@booking.com>
+alias santosh.shilimkar@oracle.com santosh.shilimkar@oracle.com
+alias <scan@exoscale.ch> <scan@exoscale.ch>
+alias service@globus.ch <service@globus.ch>
+alias silva-gustavo Gustavo A. R. Silva <gustavo@embeddedor.com>
+alias Sixt <info@e.sixt.ch>
+alias smith-stephanie Stephanie Smith <lic@rml138.com>
+alias Smood <newsletter@smood.ch>
+alias sénateur-olivier Olivier Cadic - Sénateur <contact@oliviercadic.com>
+alias sport-ochsner OCHSNER SPORT <mail@newsletter.ochsnersport.ch>
+alias sportspassion@lausanne.ch sportspassion@lausanne.ch
+alias suisse-adhésion Adhésion Fnac Suisse <newsletteruser@fnac.ch>
+alias support@ovh.com support@ovh.com
+alias talent-angellist AngelList Talent <talent@angel.co>
+alias team-hifiberry HiFiBerry team <info@hifiberry.com>
+alias team-the The GitLab Team <info@gitlab.com>
+alias torrents@rutracker.org torrents@rutracker.org
+alias tu-william William Tu <u9012063@gmail.com>
+alias tv-apple Apple TV <appletv@insideapple.apple.com>
+alias Typeform <no-reply@typeform.com>
+alias Uncubed <team@email.uncubed.com>
+alias ѽ҉ᶬḳ℠ <vtol@gmx.net>
+alias waa-jelle Jelle van der Waa <jelle@vdwaa.nl>
+alias weekly-angellist AngelList Weekly <newsletters@angel.co>
+alias westphal-florian Florian Westphal <fw@strlen.de>
+alias willem-james james willem <trustfinance2321@gmail.com>
+alias wingo-no No Reply Wingo <bounce+CID96685@wingo.ch>
+alias wingo-no No Reply Wingo <bounce@wingo.ch>
+alias women-pkz PKZ MEN & WOMEN <info@fashion.pkz.ch>
+alias Yggtorrent <mailer@yggtorrent.is>
+alias yun-william william yun <williamyun6@gmail.com>

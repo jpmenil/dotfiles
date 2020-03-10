@@ -1,0 +1,21 @@
+#!/bin/sh
+
+SINK=$(pacmd list-sinks | awk '/\* index:/{ print $3 }')
+
+case "$1" in
+    up)
+        #increase sound volume
+        pactl set-sink-volume "$SINK" +5%
+        ;;
+    down)
+        #decrease sound volume
+        pactl set-sink-volume "$SINK" -5%
+        ;;
+    mute)
+        # mute sound
+        pactl set-sink-mute "$SINK" toggle
+        ;;
+    *)
+        echo "Use: vol up|down|mute"
+        ;;
+esac

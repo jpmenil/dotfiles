@@ -1,0 +1,3 @@
+#!/bin/sh
+
+tmux has-session -t aerc || st -n aerc -e tmux new -s aerc /usr/local/bin/aerc

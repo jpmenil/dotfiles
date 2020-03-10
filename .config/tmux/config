@@ -1,0 +1,68 @@
+#------------------------------------------------------------------------------
+##   DEFAULT CONFIGURATION
+##------------------------------------------------------------------------------
+
+# act like GNU screen
+unbind C-b
+set -g prefix `
+bind ` send-prefix
+
+## set the default TERM
+#set -g default-terminal screen
+
+# Uncomment below when using st (by suckless.org)
+set -g default-terminal "screen-256color"
+#set -g default-terminal "screen-24bit"
+# # https://sunaku.github.io/tmux-24bit-color.html
+# # st supports 24-bit color, so enable support for that in tmux
+set -ga terminal-overrides ",*256col*:Tc,*24bit*:TC"
+#set -ga terminal-overrides ",*256col*:Tc"
+
+## update the TERM variable of terminal emulator when creating a new session or attaching a existing session
+set-option -g update-environment 'DISPLAY SSH_ASKPASS SSH_AUTH_SOCK SSH_AGENT_PID SSH_CONNECTION WINDOWID XAUTHORITY DBUS_SESSION_BUS_ADDRESS TERM'
+## determine if we should enable 256-colour support
+#if "[[ ${TERM} =~ 256color ]]" 'set -g default-terminal tmux-256color'
+
+## enable scroll with the mouse
+set -g mouse on
+
+# scrollback buffer n lines
+set -g history-limit 100000
+
+# listen for activity on all windows
+set -g bell-action any
+
+## Sane scrolling
+#set -g terminal-overrides 'xterm*:smcup@:rmcup@'
+
+# Faster Command Sequences (don't wait for esc/meta-key sequence):
+set -s escape-time 1
+
+# Reload key
+#unbind r
+bind r source-file ~/.tmux.conf \; display "Reloaded!"
+
+# Url select
+bind u run tmux-url-select.pl
+
+# Monitor for activity in the window. Windows with activity are highlighted in the status line.
+set-window-option -g monitor-activity off
+
+# when through ssh, use user@server instead of local
+set -g set-titles on
+set -g set-titles-string "#T"
+setw -g automatic-rename off
+setw -g allow-rename on
+
+# default statusbar colors
+set -g status-fg white
+set -g status-bg black
+#set -g status-attr default
+
+# Refresh status line every n second
+set -g status-interval 5
+
+# a message is shown on a bell instead of it being passed through to the terminal
+set -g visual-bell off
+
+set -g status off

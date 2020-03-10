@@ -1,0 +1,5 @@
+// Tab-width is now more commonly set to 4
+set_tab_width(8);
+indent_tabs_mode = 0;
+indent_width = 4;
+set-fill-column(80);

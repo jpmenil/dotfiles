@@ -1,0 +1,9 @@
+# GitHub Notifications
+color index color39 default "~f notifications@github.com"
+color index brightcolor39 default "~N ~f notifications@github.com"
+
+# deleted message
+color index color242 default ~D
+
+# tagged message
+color index color226 color237 ~T

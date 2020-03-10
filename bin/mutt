@@ -1,0 +1,3 @@
+#!/bin/sh
+
+tmux has-session -t mutt || st -t neomutt -T neomutt -c neomutt -n neomutt -e tmux new -s mutt /usr/bin/neomutt

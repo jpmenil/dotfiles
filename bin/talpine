@@ -1,0 +1,4 @@
+#!/bin/sh
+
+tmux has-session -t alpine || st -n alpine -e tmux new -s alpine alpine -d 0
+

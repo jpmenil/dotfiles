@@ -1,0 +1,51 @@
+// No backup
+//set-variable("backup-inhibited", "1");
+backup-inhibited = 1;
+final-newline = 1;
+really-exit = 1;
+set-fill-column(80);
+
+set-indent-width(4)
+set-tab-width(4)
+default-tab-width = 4
+//indent-width =
+//auto-indent = 1
+
+// Style
+set_style("default", "color", "d0d0d0");
+set_style("minibuf", "color", "white");
+set_style("mode-line", "background-color", "ffd7ff");
+set_style("status", "color", "white");
+
+set_style("region-hilite", "background-color", "87afd7");
+set_style("region-hilite", "color", "blue");
+set_style("search-hilite", "color", "yellow");
+set_style("search-match", "background-color", "blue");
+set_style("selection", "color", "blue");
+
+set_style("comment", "background-color", "black");
+set_style("comment", "color", "00afff");
+//set_style("comment", "color", "00d7ff");
+set_style("preprocess", "color", "5fd7d7");
+//set_style("string", "color", "5fff00");
+//set_style("string", "color", "ff0000");
+set_style("string", "color", "eeeeee");
+//set_style("string", "background-color", "00005f");
+//set_style("string", "background-color", "eeeeee");
+set_style("string-q", "color", "yellow");
+//set_style("keyword", "color", "blue");
+//set_style("number", "color", "blue");
+//set_style("function", "color", "afaf87");
+//set_style("variable", "color", "afaf87");
+//set_style("type", "color", "afaf87");
+//set_style("tag", "color", "afaf87");
+
+
+
+set_style("type", "color", "5fafaf");
+set_style("variable", "color", "yellow");
+
+//set_style("css-default", "color", "blue");
+set_style("html-string", "color", "blue");
+//set_style("highlight", "color", "87ffff");
+//set_style("selection", "color", "87ffff");

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+
+tty=${1:-$(tmux display -p '#{pane_tty}')}
+ssh_parameters=$(ps -t "$tty" -o command= | awk '/ssh/ && !/vagrant ssh/ && !/autossh/ && !/-W/ { $1=""; print $0; exit }')
+hostname=$(ssh -G $ssh_parameters 2>/dev/null | awk 'NR > 2 { exit } ; /^hostname / { print $2 }')
+if [ -z "$hostname" ]; then
+	hostname=$(hostname)
+fi
+echo $hostname

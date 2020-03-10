@@ -1,0 +1,88 @@
+
+
+# imap
+set imap_user            = "jpmenil@gmail.com"
+
+# Identity
+set from                 = $imap_user
+set signature            = "~/.config/neomutt/personal.signature"
+
+# Account-specific folders
+set folder               = "~/.mail/personal"
+set spoolfile            = +Inbox
+set postponed            = "+Drafts"
+set record               = "+Sent"
+set trash                = "+Trash"
+account-hook $folder 'set imap_user=$imap_user'
+# Account-specific cache folders
+set alias_file           = "~/.cache/neomutt/personal/aliases"
+set header_cache         = "~/.cache/neomutt/personal/headers"
+set message_cachedir     = "~/.cache/neomutt/personal/bodies"
+set certificate_file     = "~/.cache/neomutt/personal/certificates"
+
+unmailboxes *
+
+mailboxes `find .mail/personal -maxdepth 2 -type d ! -path ".mail/personal" ! -path "*cur*" ! -path "*new*" ! -path "*tmp*" -printf '%p ' | tr '.' '\n' | sort | sed -e "s/mail\/personal\///g" | paste -sd'+'`
+
+set sendmail             = "/usr/bin/msmtp -a personal"
+set sendmail_wait        = -1
+
+#set nm_default_uri="notmuch:///home/jenfi/.mail"
+#set virtual_spoolfile=yes
+#
+#virtual-mailboxes "Inbox"       "notmuch://?query=folder:personal/Inbox"
+#virtual-mailboxes "Sent"        "notmuch://?query=folder:personal/Sent"
+#virtual-mailboxes "Drafts"      "notmuch://?query=folder:personal/drafts"
+#virtual-mailboxes "Trash"       "notmuch://?query=folder:personal/trash"
+#virtual-mailboxes "Amazon"      "notmuch://?query=folder:personal/Amazon"
+#virtual-mailboxes "Facebook"    "notmuch://?query=folder:personal/Facebook"
+#virtual-mailboxes "Github"      "notmuch://?query=folder:personal/Github"
+#virtual-mailboxes "Impots"      "notmuch://?query=folder:personal/Impots"
+#virtual-mailboxes "Kraken"      "notmuch://?query=folder:personal/Kraken"
+#virtual-mailboxes "Linkedin"    "notmuch://?query=folder:personal/Likedin"
+#virtual-mailboxes "Jp"          "notmuch://?query=folder:personal/Jp"
+#virtual-mailboxes "Bird"        "notmuch://?query=folder:personal/Linux/Bird"
+#virtual-mailboxes "Janitors"    "notmuch://?query=folder:personal/Linux/Janitors"
+#virtual-mailboxes "Netdev"      "notmuch://?query=folder:personal/Linux/Netdev"
+#virtual-mailboxes "Netfilter    "notmuch://?query=folder:personal/Linux/Netfilter"
+#virtual-mailboxes "Netfilter-dev" "notmuch://?query=folder:personal/Linux/Netfilter-devel"
+#virtual-mailboxes "Syzkaller"   "notmuch://?query=folder:personal/Linux/Syzkaller"
+#virtual-mailboxes "XDP"         "notmuch://?query=folder:personal/Linux/XDP_Newbies"
+#virtual-mailboxes "Ovh"         "notmuch://?query=folder:personal/Ovh"
+#virtual-mailboxes "Perso"       "notmuch://?query=folder:personal/Perso"
+#virtual-mailboxes "Famille"     "notmuch://?query=folder:personal/Perso/Famille"
+#virtual-mailboxes "Lily"        "notmuch://?query=folder:personal/Perso/Lily"
+
+# Always display these two mailboxes
+#sidebar_whitelist Inbox \
+#                  Github \
+#                  Jp \
+#                  Famille \
+#                  Lily
+#
+#set sidebar_new_mail_only
+
+#alternates "me@jpmenil.com|jpmenil@gmail.com"
+
+# Account-specific folders
+#set folder               = imaps://imap.gmail.com/
+#set spoolfile            = +Inbox
+#set postponed            = "+[Gmail]/Drafts"
+#set record               = "+[Gmail]/Sent Mail"
+#set trash                = "+[Gmail]/Trash"
+#account-hook $folder 'set imap_user=$imap_user imap_pass=$imap_pass'
+## Account-specific cache folders
+#set alias_file           = "~/.cache/mutt/personal/aliases"
+#set header_cache         = "~/.cache/mutt/personal/headers"
+#set message_cachedir     = "~/.cache/mutt/personal/bodies"
+#set certificate_file     = "~/.cache/mutt/personal/certificates"
+
+# Account-specific macros
+
+# Mailing Lists
+#subscribe bird-users@network.cz
+#subscribe kernel-janitors@vger.kernel.org
+#subscribe netdev@vger.kernel.org
+#subscribe netfilter@vger.kernel.org netfilter-devel@vger.kernel.org
+#subscribe syzkaller@googlegroups.com
+#subscribe xdp-newbies@vger.kernel.org
