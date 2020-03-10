@@ -43,7 +43,7 @@ set -s escape-time 1
 bind r source-file ~/.tmux.conf \; display "Reloaded!"
 
 # Url select
-bind u run tmux-url-select.pl
+bind u run ~/.config/tmux/tmux-url-select.pl
 
 # Monitor for activity in the window. Windows with activity are highlighted in the status line.
 set-window-option -g monitor-activity off
