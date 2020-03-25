@@ -3,6 +3,7 @@
 backup-inhibited = 1;
 final-newline = 1;
 really-exit = 1;
+fuzzy-search = 1;
 set-fill-column(80);
 
 set-indent-width(4)
