@@ -1,5 +1,15 @@
 # -*- sh -*-
 
+# git
+alias ga='git add'
+alias gcb='git checkout -b'
+alias gcm='git checkout master'
+alias gcmsg='git commit -s -m'
+alias gco='git checkout'
+alias gl='git pull'
+alias grv='git remote -v'
+alias gst='git status'
+
 # rot13
 alias rot13="tr 'A-Za-z' 'N-ZA-Mn-za-m'"
 # ls

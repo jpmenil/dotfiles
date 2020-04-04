@@ -1,5 +1,7 @@
 export ZSH=$HOME/.config/zsh
 
+autoload -U add-zsh-hook
+
 () {
     for config_file ($ZSH/rc/*.zsh) source $config_file
 }
