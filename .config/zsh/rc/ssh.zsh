@@ -1,7 +1,6 @@
 # -*- sh -*-
 
 ssh() {
-
     string="$@"
     exception=net-
     lab=vMX
