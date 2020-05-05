@@ -7,6 +7,7 @@ alias gcm='git checkout master'
 alias gcmsg='git commit -s -m'
 alias gco='git checkout'
 alias gl='git pull'
+alias gp='git push'
 alias grv='git remote -v'
 alias gst='git status'
 
