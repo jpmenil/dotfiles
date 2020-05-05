@@ -1,6 +1,6 @@
 # -*- sh -*-
 
-export LS_COLORS="di=10;36:ln=1;31:so=37:pi=1;35:ex=37:bd=37:cd=37:su=37:sg=37:tw=1;36:ow=1;36"
+export LS_COLORS="di=0;35:ln=1;31:so=37:pi=1;35:ex=37:bd=37:cd=37:su=37:sg=37:tw=1;36:ow=1;36"
 
 export GOPATH="$HOME/go"
 
