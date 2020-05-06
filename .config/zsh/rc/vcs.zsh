@@ -36,13 +36,13 @@
     () {
         local formats="%F{yellow}[%b%c%u%f%F{yellow}]%f"
         local actionformats="${formats}%{${fg[default]}%} ${PRCH[sep]} %{${bg[yellow]}%}%a"
-        zstyle    ':vcs_info:*:*' formats           $formats
-        zstyle    ':vcs_info:*:*' actionformats     $actionformats
-        zstyle    ':vcs_info:*:*' stagedstr         "%{%F{cyan}${PRCH[circle]}%f+"
-        zstyle    ':vcs_info:*:*' unstagedstr       "%{%F{blue}${PRCH[circle]}%f!"
-        zstyle    ':vcs_info:*:*' check-for-changes true
+        zstyle ':vcs_info:*:*' formats           $formats
+        zstyle ':vcs_info:*:*' actionformats     $actionformats
+        zstyle ':vcs_info:*:*' stagedstr         "%{%F{cyan}${PRCH[circle]}%f+"
+        zstyle ':vcs_info:*:*' unstagedstr       "%{%F{blue}${PRCH[circle]}%f!"
+        zstyle ':vcs_info:*:8' check-for-changes true
         #zstyle    ':vcs_info:*+*:*' debug true
-        zstyle    ':vcs_info:git*+set-message:*' hooks git-untracked
+        zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
 
         +vi-git-untracked(){
             if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
