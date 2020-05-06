@@ -1,9 +1,0 @@
-#!/bin/zsh
-
-#if [ $(pactl list sinks | grep '^[[:space:]]Mute:' | tail -n 1 | awk '{print $2}') == "yes" ]; then
-#    echo "n/a"
-#else
-#    echo $(pactl list sinks | grep '^[[:space:]]Volume:' | tail -n 1 | sed -e 's,.* \([0-9][0-9]%*\).*,\1,')
-#fi
-#echo $(pactl list sinks | grep '^[[:space:]]Volume:' | head -n $(( $SINK + 1 )) | tail -n 1 | sed -e 's,.* \([0-9][0-9]%*\).*,\1,')
-awk -F"[][]" '/dB/ { print $2 }' <(amixer sget Master)
