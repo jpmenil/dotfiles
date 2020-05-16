@@ -11,8 +11,8 @@ bind ` send-prefix
 #set -g default-terminal screen
 
 # Uncomment below when using st (by suckless.org)
-set -g default-terminal "screen-256color"
-#set -g default-terminal "screen-24bit"
+#set -g default-terminal "screen-256color"
+set -g default-terminal "st-24bit"
 # # https://sunaku.github.io/tmux-24bit-color.html
 # # st supports 24-bit color, so enable support for that in tmux
 set -ga terminal-overrides ",*256col*:Tc,*24bit*:TC"
@@ -44,6 +44,9 @@ bind r source-file ~/.tmux.conf \; display "Reloaded!"
 
 # Url select
 bind u run ~/.config/tmux/tmux-url-select.pl
+
+# Clear scrollback buffer
+bind k clear-history
 
 # Monitor for activity in the window. Windows with activity are highlighted in the status line.
 set-window-option -g monitor-activity off
