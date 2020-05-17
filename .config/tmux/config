@@ -12,11 +12,10 @@ bind ` send-prefix
 
 # Uncomment below when using st (by suckless.org)
 #set -g default-terminal "screen-256color"
-set -g default-terminal "st-24bit"
+set -g default-terminal "st-256color"
 # # https://sunaku.github.io/tmux-24bit-color.html
 # # st supports 24-bit color, so enable support for that in tmux
-set -ga terminal-overrides ",*256col*:Tc,*24bit*:TC"
-#set -ga terminal-overrides ",*256col*:Tc"
+set -ga terminal-overrides ",st-256color:Tc"
 
 ## update the TERM variable of terminal emulator when creating a new session or attaching a existing session
 set-option -g update-environment 'DISPLAY SSH_ASKPASS SSH_AUTH_SOCK SSH_AGENT_PID SSH_CONNECTION WINDOWID XAUTHORITY DBUS_SESSION_BUS_ADDRESS TERM'
