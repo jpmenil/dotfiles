@@ -13,7 +13,7 @@ fi
 
 # Start some nice programs
 
-xrandr --output eDP1 --mode 2560x1600 --dpi 227 &
+#xrandr --output eDP1 --mode 2560x1600 --dpi 227 &
 slstatus &
 xcompmgr -c &
 
