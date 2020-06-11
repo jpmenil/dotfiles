@@ -9,7 +9,7 @@ if ps -C cmus > /dev/null; then
     stream=`cmus-remote -Q |
         grep --text '^stream' |
         sed -e 's/stream //'`
-    echo " Now Playing: $stream - $title";
+    echo " Now Playing: $stream - $title┊";
 else
     echo " ";
 fi
