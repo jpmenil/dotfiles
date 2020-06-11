@@ -11,7 +11,8 @@ color message		default		default
 color normal		default		default
 color prompt		default	        default
 color search		color84		default
-color status 		color141	color236
+#color status 		color141	color236
+color status            color220        black
 color tilde		color231	default
 color tree		color141	default
 
