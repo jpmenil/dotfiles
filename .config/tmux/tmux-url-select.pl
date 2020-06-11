@@ -19,8 +19,8 @@ use constant TMUX_WINDOW_ID => 9999;
 use constant HIDE_WINDOW => 1;
 
 use constant PROMPT_COLOR => "\033[42;30m";
-use constant ACTIVE_LINK_HIGHLIGHT => "\033[44;4m";
-use constant NORMAL_LINK_HIGHLIGHT => "\033[94;1;4m";
+use constant ACTIVE_LINK_HIGHLIGHT => "\033[34;4m";
+use constant NORMAL_LINK_HIGHLIGHT => "\033[57;1;4m";
 
 # other options:
 # - blue background, underlined: \033[44;4m
