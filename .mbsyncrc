@@ -40,9 +40,7 @@ Master :personal-remote:
 Slave :personal-local:
 Patterns * ![Gmail]* !Drafts !Sent !Spam !Trash
 
-Remove Slave
 Expunge Both
-
 Create slave
 SyncState *
 
@@ -63,7 +61,6 @@ User jpmenil@wanadoo.fr
 PassCmd "gpg2 -q --for-your-eyes-only --no-tty -d ~/.config/credentials/orange.gpg"
 SSLType IMAPS
 PipelineDepth 1
-#CertificateFile /etc/ssl/certs/ca-certificates.crt
 
 IMAPStore orange-remote
 Account orange
@@ -95,9 +92,7 @@ Master :orange-remote:
 Slave :orange-local:
 Patterns * !Drafts !Sent !Spam !Trash !DRAFT !OUTBOX !QUARANTAINE !TRASH
 
-Remove Slave
 Expunge Both
-
 Create slave
 SyncState *
 
@@ -107,51 +102,3 @@ Channel orange-sent
 Channel orange-spam
 Channel orange-trash
 Channel orange-inbox
-
-############
-# Exoscale #
-############
-
-#IMAPAccount exoscale
-#Host imap.gmail.com
-#User jpmenil@exoscale.ch
-#PassCmd "gpg2 -q --for-your-eyes-only --no-tty -d ~/.config/credentials/exoscale.gpg"
-#SSLType IMAPS
-#PipelineDepth 1
-#
-#IMAPStore exoscale-remote
-#Account exoscale
-#
-#MaildirStore exoscale-local
-#Subfolders Verbatim
-#Path ~/.mail/exoscale/
-#Inbox ~/.mail/exoscale/Inbox
-#
-#Channel exoscale-drafts
-#Master :exoscale-remote:"[Gmail]/Drafts"
-#Slave :exoscale-local:Drafts
-#
-#Channel exoscale-sent
-#Master :exoscale-remote:"[Gmail]/Sent Mail"
-#Slave :exoscale-local:Sent
-#
-#Channel exoscale-trash
-#Master :exoscale-remote:"[Gmail]/Bin"
-#Slave :exoscale-local:Trash
-#
-#Channel exoscale-inbox
-#Master :exoscale-remote:
-#Slave :exoscale-local:
-#Patterns * ![Gmail]* !Drafts !Sent !Spam !Trash
-#
-#Remove Slave
-#Expunge Both
-#
-#Create slave
-#SyncState *
-#
-#Group exoscale
-#Channel exoscale-drafts
-#Channel exoscale-sent
-#Channel exoscale-trash
-#Channel exoscale-inbox
