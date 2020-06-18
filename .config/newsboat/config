@@ -1,7 +1,8 @@
 auto-reload         yes
-cache-file          "~/.cache/newsboat/cache.db"
 browser             firefox
+cache-file          "~/.cache/newsboat/cache.db"
 cleanup-on-quit     yes
+confirm-exit        yes
 download-path       "~/Downloads
 error-log           "~/.cache/newsboat/error.log"
 notify-always       yes
