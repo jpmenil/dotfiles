@@ -14,11 +14,13 @@ alias gst='git status'
 # rot13
 alias rot13="tr 'A-Za-z' 'N-ZA-Mn-za-m'"
 # ls
+alias ll="ls -la"
 alias llrt="ls -lrta"
 
 # xbps
 alias xq="xbps-query -Rs"
 alias xi="sudo xbps-install -S"
+alias xo="sudo xbps-remove -Oo"
 alias xu="sudo xbps-install -Su"
 
 alias x=extract
@@ -45,19 +47,3 @@ alias ts='tmux new-session -s'
 alias tl='tmux list-sessions'
 alias tksv='tmux kill-server'
 alias tkss='tmux kill-session -t'
-
-# pipenv
-alias pch="pipenv check"
-alias pcl="pipenv clean"
-alias pgr="pipenv graph"
-alias pi="pipenv install"
-alias pidev="pipenv install --dev"
-alias pl="pipenv lock"
-alias po="pipenv open"
-alias prun="pipenv run"
-alias psh="pipenv shell"
-alias psy="pipenv sync"
-alias pu="pipenv uninstall"
-alias pwh="pipenv --where"
-alias pvenv="pipenv --venv"
-alias ppy="pipenv --py"

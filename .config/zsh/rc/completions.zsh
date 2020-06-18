@@ -50,6 +50,7 @@ zstyle ':completion:*:(ssh|scp|sftp):*' hosts $custom_hosts
 # Don't use known_hosts_file (too slow)
 zstyle ":completion:*:hosts" known-hosts-files ''
 
-autoload -Uz compinit
+autoload compinit
 compinit
-zmodload -i zsh/complist
+#autoload -U complist
+#zmodload -i zsh/complist

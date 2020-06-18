@@ -1,14 +1,10 @@
-export ZSH=$HOME/.config/zsh
+# -*- sh -*-
 
-autoload -U add-zsh-hook
+ZSH=${ZSH:-${ZDOTDIR:-$HOME}/.config/zsh}
 
 () {
     for config_file ($ZSH/rc/*.zsh) source $config_file
 }
-
-# Bashquese Ctrl-W
-autoload -U select-word-style
-select-word-style bash
 
 fpath=($ZSH/completions $ZSH/functions $fpath)
 
