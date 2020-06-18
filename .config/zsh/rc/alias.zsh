@@ -14,8 +14,8 @@ alias gst='git status'
 # rot13
 alias rot13="tr 'A-Za-z' 'N-ZA-Mn-za-m'"
 # ls
-alias ll="ls -la"
-alias llrt="ls -lrta"
+alias ll="ls -la --color=auto"
+alias llrt="ls -lrta --color=auto"
 
 # xbps
 alias xq="xbps-query -Rs"
