@@ -1,15 +1,10 @@
 #!/bin/sh
 
-# Code inspired by content found at http://v3gard.com/2011/01/getting-cmus-to-cooperate-with-conky/
-
 if ps -C cmus > /dev/null; then
-    title=`cmus-remote -Q |
-            grep --text '^tag title' |
-            sed -e 's/tag title //'`
-    stream=`cmus-remote -Q |
-        grep --text '^stream' |
-        sed -e 's/stream //'`
-    echo " Now Playing: $stream - $title┊";
+    result=`cmus-remote -C status`
+    title=${result#*title}
+    stream=${result#*stream }
+    echo  Now Playing: ${stream%%set*}-${title%%tag*}┊
 else
     echo " ";
 fi
