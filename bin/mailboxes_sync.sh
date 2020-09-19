@@ -18,7 +18,7 @@ for account in $(ls ~/.mail); do
     # Are there any new unread mail?
     if [ "$newcount" -gt "0" ]; then
         # Send a notification
-        /usr/bin/notify-send.sh -t 60000 "New Mail" "$newcount new mail in mailbox $account" &
+        herbe "New Mail" "$newcount new mail in mailbox $account" &
     fi
 done
 
