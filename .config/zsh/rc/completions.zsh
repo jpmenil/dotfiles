@@ -4,6 +4,13 @@
 # Completion
 ##
 
+autoload -Uz compinit
+if [[ -n ${ZDOTDIR:-$HOME}/.zcompdump(N.mh+2) ]]; then
+    compinit
+else
+    compinit -C
+fi
+
 # completion caching, use rehash to clear
 zstyle ':completion::complete:*' use-cache on
 # cache path
@@ -49,8 +56,3 @@ zstyle ':completion:*:(ssh|scp|sftp):*' hosts $custom_hosts
 
 # Don't use known_hosts_file (too slow)
 zstyle ":completion:*:hosts" known-hosts-files ''
-
-autoload compinit
-compinit
-#autoload -U complist
-#zmodload -i zsh/complist
