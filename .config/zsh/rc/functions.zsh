@@ -6,6 +6,10 @@ function mfa () {
     oathtool --base32 --totp "$(pass show $1/2fa)" | xclip -selection clipboard ;
 }
 
+function fk() {
+    ps aux | grep $1 | grep -v grep | awk '{print $2}' | xargs kill -9
+}
+
 function rmssh () {
     sed -i "/$1/d" ~/.ssh/known_hosts
 }
