@@ -5,8 +5,6 @@
 export HOME=$HOME
 export DISPLAY=:0
 export XAUTHORITY="${HOME}/.Xauthority"
-DBUS=$(ls .dbus/session-bus/)
-. "$HOME/.dbus/session-bus/$DBUS"
 
 # Download new mail
 mbsync -a -q
@@ -18,7 +16,7 @@ for account in $(ls ~/.mail); do
     # Are there any new unread mail?
     if [ "$newcount" -gt "0" ]; then
         # Send a notification
-        herbe "New Mail" "$newcount new mail in mailbox $account" &
+        /usr/local/bin/herbe "New Mail" "$newcount new mail in mailbox $account" &
     fi
 done
 
