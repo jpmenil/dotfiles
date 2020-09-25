@@ -33,7 +33,7 @@ alias monip6="curl ipv6.icanhazip.com"
 alias pass="PASSWORD_STORE_DIR=~/WORK/jp/git/password-store/ pass"
 alias grep='grep --color=auto'
 alias sudo='sudo '
-alias notif='python ~/WORK/jp/pyrnotify.py 4321 & ssh -f -N -q -R 4321:localhost:4321 numenor'
+alias notif='python ~/bin/pyrnotify.py 4321 & ssh -f -N -q -R 4321:localhost:4321 numenor'
 
 alias docker='sudo docker'
 alias rm_docker='docker ps -a | awk '\''{print $1}'\'' | grep -v CONTAINER | xargs docker rm'
