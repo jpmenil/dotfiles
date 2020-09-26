@@ -2,12 +2,17 @@
 
 [ ! -r ~/.mbsyncrc ] && exit 0
 
+# Download new mail
+if ps -C mbsync > /dev/null; then
+    exit 0
+fi
+
+mbsync -a -q
+
+# Needed for herbe notifications
 export HOME=$HOME
 export DISPLAY=:0
 export XAUTHORITY="${HOME}/.Xauthority"
-
-# Download new mail
-mbsync -a -q
 
 # Loop through every account in ~/.mail
 for account in $(ls ~/.mail); do
@@ -22,3 +27,6 @@ done
 
 # Update access time of a marker file
 touch ~/.config/neomutt/.mailsynclast
+
+# notmuch
+notmuch --config ~/.config/notmuch-config new
