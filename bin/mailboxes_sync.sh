@@ -7,7 +7,7 @@ if ps -C mbsync > /dev/null; then
     exit 0
 fi
 
-mbsync -a -q
+mbsync -c ~/.config/mbsyncrc -a -q
 
 # Needed for herbe notifications
 export HOME=$HOME

@@ -24,7 +24,7 @@ unmailboxes *
 
 mailboxes `find .mail/personal -maxdepth 2 -type d ! -path ".mail/personal" ! -path "*cur*" ! -path "*new*" ! -path "*tmp*" -printf '%p ' | tr '.' '\n' | sort | sed -e "s/mail\/personal\///g" | paste -sd'+'`
 
-set sendmail             = "/usr/bin/msmtp -a personal"
+set sendmail             = "/usr/bin/msmtp -C ~/.config/msmtprc -a personal"
 set sendmail_wait        = -1
 
 #set nm_default_uri="notmuch:///home/jenfi/.mail"
