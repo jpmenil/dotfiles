@@ -1,6 +1,6 @@
 #!/bin/sh
 
-[ ! -r ~/.mbsyncrc ] && exit 0
+[ ! -r ~/.config/mbsyncrc ] && exit 0
 
 # Download new mail
 if ps -C mbsync > /dev/null; then
