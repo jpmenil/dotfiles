@@ -1,0 +1,26 @@
+# imap
+set imap_user            = "jpmenil@sandman.ovh"
+
+# Identity
+set from                 = $imap_user
+set signature            = "~/.config/neomutt/personal.signature"
+
+# Account-specific folders
+set folder               = "~/.mail/ovh"
+set spoolfile            = +Inbox
+set postponed            = "+Drafts"
+set record               = "+Sent Mail"
+set trash                = "+Trash"
+account-hook $folder 'set imap_user=$imap_user'
+# Account-specific cache folders
+set alias_file           = "~/.cache/neomutt/ovh/aliases"
+set header_cache         = "~/.cache/neomutt/ovh/headers"
+set message_cachedir     = "~/.cache/neomutt/ovh/bodies"
+set certificate_file     = "~/.cache/neomutt/ovh/certificates"
+
+unmailboxes *
+
+mailboxes `find .mail/ovh -maxdepth 2 -type d ! -path ".mail/ovh" ! -path "*cur*" ! -path "*new*" ! -path "*tmp*" -printf '%p ' | tr '.' '\n' | sort | sed -e "s/mail\/ovh\///g" | paste -sd'+'`
+
+set sendmail             = "/usr/bin/msmtp -C ~/.config/msmtprc -a ovh"
+set sendmail_wait        = -1
