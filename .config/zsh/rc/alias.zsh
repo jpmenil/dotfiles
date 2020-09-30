@@ -36,6 +36,7 @@ alias cpu_perf='echo performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq
 alias docker='sudo docker'
 alias e="qemacs"
 alias grep='grep --color=auto'
+alias mbsync='mbsync -c ~/.config/mbsyncrc'
 alias monip="curl ipv4.icanhazip.com"
 alias monip6="curl ipv6.icanhazip.com"
 alias notif='python ~/bin/pyrnotify.py 4321 & ssh -f -N -q -R 4321:localhost:4321 numenor'
