@@ -1,6 +1,7 @@
 [user]
     email = jpmenil@gmail.com
     name = Jean-Philippe Menil
+    signingkey = 612B82125CCAB524
 [color]
     ui = true
 [color "branch"]
@@ -38,4 +39,4 @@
     smtpserverport = 587
     chainreplyto = false
 [include]
-  path = ~/.config/git/config
+    path = ~/.config/git/config
