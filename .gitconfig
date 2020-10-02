@@ -27,6 +27,8 @@
     lg = log --color --graph --pretty=format:'%C(yellow)%h%Creset -%Cgreen%d%Creset %s %C(cyan)(%ar)%Creset' --abbrev-commit
     df = diff
     wdiff = diff --word-diff=color
+[commit]
+    gpgSign = true
 [core]
     abbrev = 12
 [pretty]
