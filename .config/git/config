@@ -33,12 +33,11 @@
     abbrev = 12
 [pretty]
     fixes = Fixes: %h (\"%s\")
+[credential "smtp://smtp.googlemail.com:587"]
+    helper = !PASSWORD_STORE_DIR=~/WORK/jp/git/password-store pass git/email
 [sendemail]
-    ; setup for using git send-email; prompts for password
     smtpuser = jpmenil@gmail.com
     smtpserver = smtp.googlemail.com
     smtpencryption = tls
     smtpserverport = 587
     chainreplyto = false
-[include]
-    path = ~/.config/git/config
