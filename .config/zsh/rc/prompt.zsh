@@ -14,11 +14,10 @@ _jp_prompt () {
         PR_PROMPT='%F{red}➤%f'
     fi
 
-    # Check if we are on SSH or not
-    if [[ -n "$SSH_CLIENT"  ||  -n "$SSH2_CLIENT" ]]; then
-        PR_HOST='%F{083}%M%f' # SSH
+    if [[ -n "$SSH_TTY" ]]; then
+        PR_HOST='%F{083}%M%f'
     else
-        PR_HOST='%F{cyan}%M%f' # no SSH
+        PR_HOST='%F{cyan}%M%f'
     fi
 
     local return_code="%(?..%F{red}%? ↵%f)"
