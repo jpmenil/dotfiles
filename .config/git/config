@@ -41,3 +41,5 @@
     smtpencryption = tls
     smtpserverport = 587
     chainreplyto = false
+[pull]
+	rebase = false
