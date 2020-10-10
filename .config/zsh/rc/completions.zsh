@@ -44,15 +44,13 @@ zstyle ':completion:*:killall:*' force-list always
 users=(jenfi root)
 zstyle ':completion:*' users $users
 
-_ssh_config_hosts=(${(s: :)${(ps:\t:)${(f)"$(<$HOME/.ssh/config|grep '^Host')"}#Host}#Hostname})
+_ssh_config_hosts=(${(s: :)${(ps:\t:)${(f)"$(<$HOME/.ssh/config*|grep '^Host')"}#Host}#Hostname})
 
 custom_hosts=(
     "$_ssh_config_hosts[@]"
     localhost
 )
 
-#zstyle ':completion:*:hosts' hosts $custom_hosts
-zstyle ':completion:*:(ssh|scp|sftp):*' hosts $custom_hosts
-
-# Don't use known_hosts_file (too slow)
 zstyle ":completion:*:hosts" known-hosts-files ''
+zstyle ':completion:*:(ssh|scp|rsync):*:hosts' $custom_hosts
+
