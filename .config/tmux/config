@@ -8,19 +8,13 @@ set -g prefix `
 bind ` send-prefix
 
 ## set the default TERM
-#set -g default-terminal screen
-
-# Uncomment below when using st (by suckless.org)
-#set -g default-terminal "screen-256color"
 set -g default-terminal "st-256color"
 # # https://sunaku.github.io/tmux-24bit-color.html
 # # st supports 24-bit color, so enable support for that in tmux
 set -ga terminal-overrides ",st-256color:Tc"
 
 ## update the TERM variable of terminal emulator when creating a new session or attaching a existing session
-set-option -g update-environment 'DISPLAY SSH_ASKPASS SSH_AUTH_SOCK SSH_AGENT_PID SSH_CONNECTION WINDOWID XAUTHORITY DBUS_SESSION_BUS_ADDRESS TERM'
-## determine if we should enable 256-colour support
-#if "[[ ${TERM} =~ 256color ]]" 'set -g default-terminal tmux-256color'
+set-option -g update-environment 'DISPLAY SSH_AUTH_SOCK TERM XAUTHORITY WINDOWID'
 
 ## enable scroll with the mouse
 set -g mouse on
@@ -31,14 +25,10 @@ set -g history-limit 100000
 # listen for activity on all windows
 set -g bell-action any
 
-## Sane scrolling
-#set -g terminal-overrides 'xterm*:smcup@:rmcup@'
-
 # Faster Command Sequences (don't wait for esc/meta-key sequence):
 set -s escape-time 1
 
 # Reload key
-#unbind r
 bind r source-file ~/.tmux.conf \; display "Reloaded!"
 
 # Url select
@@ -53,7 +43,7 @@ set-window-option -g monitor-activity off
 # when through ssh, use user@server instead of local
 set -g set-titles on
 set -g set-titles-string "#T"
-setw -g automatic-rename off
+setw -g automatic-rename on
 setw -g allow-rename on
 
 # default statusbar colors
