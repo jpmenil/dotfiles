@@ -14,14 +14,16 @@ export HOME=$HOME
 export DISPLAY=:0
 export XAUTHORITY="${HOME}/.Xauthority"
 
+prefix="/home/jenfi/.mail/"
+
 # Loop through every account in ~/.mail
-for account in ~/.mail/*; do
+for account in "$prefix"*; do
     # Find all unread mail whose file is newer that the last time this script was run and count them
-    newcount=$(find .mail/"$account"/Inbox/new -type f -newer ~/.config/neomutt/.mailsynclast 2> /dev/null | wc -l)
+    newcount=$(find "$account"/Inbox/new -type f -newer ~/.config/neomutt/.mailsynclast 2> /dev/null | wc -l)
     # Are there any new unread mail?
     if [ "$newcount" -gt "0" ]; then
         # Send a notification
-        /usr/local/bin/herbe "New Mail" "$newcount new mail in mailbox $account" &
+        /usr/local/bin/herbe "New Mail" "$newcount new mail in mailbox ${account#"$prefix"}" &
     fi
 done
 
@@ -29,4 +31,4 @@ done
 touch ~/.config/neomutt/.mailsynclast
 
 # notmuch
-notmuch --config ~/.config/notmuch-config new
+#notmuch --config ~/.config/notmuch-config new
