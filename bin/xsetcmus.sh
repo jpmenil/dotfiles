@@ -2,7 +2,7 @@
 
 if ps -C cmus > /dev/null; then
     substring="status playing"
-    result=`cmus-remote -C status`
+    result=$(cmus-remote -C status)
     logitech="Welcome to Logitech Media Server"
     inter="franceinter"
 
@@ -19,7 +19,7 @@ if ps -C cmus > /dev/null; then
         elif [ ! "${result##*"$logitech"*}" ]; then
             stream_source=${title%%stream*}
         fi
-        echo  Now Playing: ${artist_title} -- ${stream_source}┊
+        echo  Now Playing: "${artist_title}" -- "${stream_source}"┊
     else
         echo " ";
     fi
