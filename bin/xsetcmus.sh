@@ -19,7 +19,7 @@ if ps -C cmus > /dev/null; then
         elif [ ! "${result##*"$logitech"*}" ]; then
             stream_source=${title%%stream*}
         fi
-        echo  Now Playing: "${artist_title}" -- "${stream_source}"┊
+        echo  Now Playing:"${artist_title}" -- "${stream_source}"┊ | tr '\n' ' '
     else
         echo " ";
     fi
