@@ -24,5 +24,5 @@ unmailboxes *
 
 mailboxes `find .mail/orange -maxdepth 2 -type d ! -path ".mail/orange" ! -path "*cur*" ! -path "*new*" ! -path "*tmp*" -printf '%p ' | tr '.' '\n' | sort | sed -e "s/mail\/orange\///g" | paste -sd'+'`
 
-set sendmail             = "/usr/bin/msmtp -C ~/.config/msmtprc -a orange"
+set sendmail             = "/usr/bin/msmtp -a orange"
 set sendmail_wait        = -1

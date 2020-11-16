@@ -22,5 +22,5 @@ unmailboxes *
 
 mailboxes `find .mail/ovh -maxdepth 2 -type d ! -path ".mail/ovh" ! -path "*cur*" ! -path "*new*" ! -path "*tmp*" -printf '%p ' | tr '.' '\n' | sort | sed -e "s/mail\/ovh\///g" | paste -sd'+'`
 
-set sendmail             = "/usr/bin/msmtp -C ~/.config/msmtprc -a ovh"
+set sendmail             = "/usr/bin/msmtp -a ovh"
 set sendmail_wait        = -1
