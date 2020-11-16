@@ -31,7 +31,7 @@ use constant NORMAL_LINK_HIGHLIGHT => "\033[57;1;4m";
 
 # regex stolen from urxvtperls url-select.pl
 my $url_pattern = qr{(
-    (?:https?://|ftp://|news://|git://|mailto:|file://|gopher://|www\.)
+    (?:https?://|ftp://|news://|git@|git://|mailto:|file://|gopher://|www\.)
     [\w\-\@;\/?:&=%\$_.+!*\x27(),~#\x1b\[\]]+[\w\-\@;\/?&=%\$_+!*\x27(~]
 )}x;
 
