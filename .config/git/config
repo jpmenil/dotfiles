@@ -1,7 +1,7 @@
 [user]
     email = jpmenil@gmail.com
     name = Jean-Philippe Menil
-    signingkey = 612B82125CCAB524
+    signingkey = 180E18FB54F923C9
 [color]
     ui = true
 [color "branch"]
