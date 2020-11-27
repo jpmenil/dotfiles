@@ -3,7 +3,7 @@
 # git
 alias ga='git add'
 alias gcb='git checkout -b'
-alias gcm='git checkout master'
+alias gcm='git checkout $(git_main_branch)'
 alias gcmsg='git commit -s -m'
 alias gco='git checkout'
 alias gl='git pull'
