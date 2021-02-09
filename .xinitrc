@@ -15,7 +15,7 @@ fi
 
 #xrandr --output eDP1 --mode 2560x1600 --dpi 227 &
 slstatus &
-picom &
+#picom &
 
 # Start the window manager
 exec ~/bin/startdwm
