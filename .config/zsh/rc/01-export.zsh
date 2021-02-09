@@ -10,5 +10,5 @@ export XDG_CONFIG_HOME="$HOME/.config"
 
 # gpg & ssh
 export GPG_TTY=$(tty)
-export SSH_AUTH_SOCK="${HOME}/.gnupg/S.gpg-agent.ssh"
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpg-connect-agent -q updatestartuptty /bye >> /dev/null
