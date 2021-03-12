@@ -47,3 +47,4 @@ alias rot13="tr 'A-Za-z' 'N-ZA-Mn-za-m'"
 alias x=extract
 alias vlc='vlc --avcodec-hw=vaapi'
 alias xclip="xclip -selection clipboard"
+alias weechat="weechat -d ~/.config/weechat"
