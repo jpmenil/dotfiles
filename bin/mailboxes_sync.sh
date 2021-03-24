@@ -14,7 +14,7 @@ export HOME=$HOME
 export DISPLAY=:0
 export XAUTHORITY="${HOME}/.Xauthority"
 
-prefix="/home/jenfi/.mail/"
+prefix="${HOME}/.mail/"
 
 # Loop through every account in ~/.mail
 for account in "$prefix"*; do
