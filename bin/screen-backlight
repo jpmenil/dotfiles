@@ -1,31 +1,33 @@
-#!/bin/zsh
+#!/bin/sh
 
-BRIGHTNESS=$(cat /sys/class/backlight/intel_backlight/brightness)
-MAX_BRIGHTNESS=$(cat /sys/class/backlight/intel_backlight/max_brightness)
+CARD_PATH="/sys/class/backlight/intel_backlight"
+BRIGHTNESS=$(cat "$CARD_PATH"/brightness)
+MAX_BRIGHTNESS=$(cat "$CARD_PATH"/max_brightness)
+START=105
 
 INCREMENT=15
 
 case $1 in
     up)
-        if (( $BRIGHTNESS < $MAX_BRIGHTNESS )); then
-            let BRIGHTNESS=$BRIGHTNESS+$INCREMENT
-            echo $BRIGHTNESS | sudo tee /sys/class/backlight/intel_backlight/brightness
+        if [ "$BRIGHTNESS" -lt "$MAX_BRIGHTNESS" ]; then
+            BRIGHTNESS=$((BRIGHTNESS + INCREMENT))
+            echo "$BRIGHTNESS" | sudo tee "$CARD_PATH"/brightness
         fi
         ;;
     down)
-        if (( $BRIGHTNESS > $INCREMENT )); then
-            let BRIGHTNESS=$BRIGHTNESS-$INCREMENT
-            echo $BRIGHTNESS | sudo tee /sys/class/backlight/intel_backlight/brightness
+        if [ "$BRIGHTNESS" -gt "$INCREMENT" ]; then
+            BRIGHTNESS=$((BRIGHTNESS - INCREMENT))
+            echo "$BRIGHTNESS" | sudo tee "$CARD_PATH"/brightness
         fi
         ;;
     start)
-        echo 105 | sudo tee /sys/class/backlight/intel_backlight/brightness
+        echo "$START" | sudo tee "$CARD_PATH"/brightness
         ;;
     total)
-        echo $MAX_BRIGHTNESS | sudo tee /sys/class/backlight/intel_backlight/brightness
+        echo "$MAX_BRIGHTNESS" | sudo tee "$CARD_PATH"/brightness
         ;;
     off)
-        echo 0 | sudo tee /sys/class/backlight/intel_backlight/brightness
+        echo 0 | sudo tee "$CARD_PATH"/brightness
         ;;
     *)
     echo "Use: screen-backlight up|down|total|off"
