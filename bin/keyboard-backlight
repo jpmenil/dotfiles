@@ -1,29 +1,28 @@
-#!/bin/zsh
+#!/bin/sh
 
-BRIGHTNESS=$(cat /sys/class/leds/smc::kbd_backlight/brightness)
-MAX_BRIGHTNESS=$(cat /sys/class/leds/smc::kbd_backlight/max_brightness)
+LED_PATH="/sys/class/leds/smc::kbd_backlight"
+BRIGHTNESS=$(cat "$LED_PATH"/brightness)
+MAX_BRIGHTNESS=$(cat "$LED_PATH"/max_brightness)
 INCREMENT=15
-
-SET_VALUE=0
 
 case $1 in
     up)
-        if (( $BRIGHTNESS < $MAX_BRIGHTNESS)); then
-            let BRIGHTNESS=$BRIGHTNESS+$INCREMENT
-            echo "echo $BRIGHTNESS > /sys/class/leds/smc::kbd_backlight/brightness" | sudo zsh
+        if [ "$BRIGHTNESS" -lt "$MAX_BRIGHTNESS" ]; then
+            BRIGHTNESS=$((BRIGHTNESS + INCREMENT))
+            echo "$BRIGHTNESS" | sudo tee "$LED_PATH"/brightness
         fi
         ;;
     down)
-        if (( $BRIGHTNESS >= $INCREMENT )); then
-            let BRIGHTNESS=$BRIGHTNESS-$INCREMENT
-            echo "echo $BRIGHTNESS > /sys/class/leds/smc::kbd_backlight/brightness" | sudo zsh
+        if [ "$BRIGHTNESS" -gt "$INCREMENT" ]; then
+            BRIGHTNESS=$((BRIGHTNESS - INCREMENT))
+            echo "$BRIGHTNESS" | sudo tee "$LED_PATH"/brightness
         fi
         ;;
     total)
-        echo "echo $MAX_BRIGHTNESS > /sys/class/leds/smc::kbd_backlight/brightness" | sudo zsh
+        echo "$MAX_BRIGHTNESS" | sudo tee "$LED_PATH"/brightness
         ;;
     off)
-        echo "echo 0 > /sys/class/leds/smc::kbd_backlight/brightness" | sudo zsh
+        echo 0 | sudo tee "$LED_PATH"/brightness
         ;;
     *)
         echo "Use: keyboard-backlight up|down|total|off"
