@@ -42,4 +42,7 @@
     smtpserverport = 587
     chainreplyto = false
 [pull]
-	rebase = false
+    rebase = false
+
+[includeIf "gitdir:~/WORK/blockfi/"]
+    path = ~/.config/git/config-blockfi
