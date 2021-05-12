@@ -9,6 +9,8 @@ export EDITOR=$VISUAL
 export XDG_CONFIG_HOME="$HOME/.config"
 
 # gpg & ssh
-export GPG_TTY=$(tty)
-export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-gpg-connect-agent -q updatestartuptty /bye >> /dev/null
+if [ -z $SSH_TTY ]; then
+    export GPG_TTY=$(tty)
+    export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+    gpg-connect-agent -q updatestartuptty /bye >> /dev/null
+fi
