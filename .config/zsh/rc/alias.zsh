@@ -48,3 +48,6 @@ alias x=extract
 alias vlc='vlc --avcodec-hw=vaapi'
 alias xclip="xclip -selection clipboard"
 alias weechat="weechat -d ~/.config/weechat"
+
+# pulumi
+alias pls='pulumi stack ls'
