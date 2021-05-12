@@ -1,7 +1,11 @@
 # -*- sh -*-
 
 _title_precmd () {
-    print -Pn "\e]2;%n@%m %~\a"
+    if [ -z "$SSH_TTY" ]; then
+        print -Pn "\e]2; %~\a"
+    else
+        print -Pn "\e]2;%n@%m %~\a"
+    fi
 }
 
 _title_preexec () {
