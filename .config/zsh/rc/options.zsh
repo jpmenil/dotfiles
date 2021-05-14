@@ -2,7 +2,7 @@
 
 # Remove / from WORDCHARS (more like bash)
 #WORDCHARS=${WORDCHARS:s#/#}
-WORDCHARS='*?_[]~=&;!#$%^(){}<>'        # without /
+WORDCHARS='*?[]~&;!#$%^(){}<>'        # without /_=
 
 # when completing from the middle of a word, move the cursor to the end of the word
 setopt always_to_end
