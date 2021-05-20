@@ -6,6 +6,8 @@ really-exit = 1;
 fuzzy-search = 1;
 set-fill-column(80);
 
+//use-session-file =1;
+
 set-indent-width(4)
 set-tab-width(4)
 default-tab-width = 4
@@ -24,9 +26,8 @@ set_style("search-hilite", "color", "yellow");
 set_style("search-match", "background-color", "blue");
 set_style("selection", "color", "blue");
 
-set_style("comment", "background-color", "black");
-set_style("comment", "color", "00afff");
-//set_style("comment", "color", "00d7ff");
+set_style("blank-hilite", "color", "yellow");
+
 set_style("preprocess", "color", "5fd7d7");
 //set_style("string", "color", "5fff00");
 //set_style("string", "color", "ff0000");
@@ -50,3 +51,17 @@ set_style("variable", "color", "yellow");
 set_style("html-string", "color", "blue");
 //set_style("highlight", "color", "87ffff");
 //set_style("selection", "color", "87ffff");
+
+
+set_style("comment", "background-color", "00afff");
+set_style("comment", "color", "black");
+set_style("comment", "font-family", "sans");
+set_style("comment", "font-size", "12");
+set_style("comment", "font-style", "italic");
+
+set_style("keyword", "font-family", "serif");
+set_style("keyword", "font-size", "18");
+
+set_style("function", "font-family", "serif");
+set_style("function", "font-size", "18");
+//set_style("function", "font-weight", "bold");
