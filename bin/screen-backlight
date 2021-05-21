@@ -3,8 +3,7 @@
 CARD_PATH="/sys/class/backlight/acpi_video0"
 BRIGHTNESS=$(cat "$CARD_PATH"/brightness)
 MAX_BRIGHTNESS=$(cat "$CARD_PATH"/max_brightness)
-START=105
-
+START=20
 INCREMENT=5
 
 case $1 in
