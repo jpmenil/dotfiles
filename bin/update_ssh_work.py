@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import sys
 from pathlib import Path
 
@@ -28,14 +30,15 @@ def construct_hosts(response):
     hosts = {}
     for reservation in response["Reservations"]:
         for instance in reservation["Instances"]:
-            instance_id = instance["InstanceId"]
-            if "Tags" in instance:
-                for tags in instance["Tags"]:
-                    if tags.get("Key") == "product":
-                        product = tags.get("Value")
-                        hosts[product] = hosts.get(product, [])
-                        if instance_id not in hosts[product]:
-                            hosts[product].append(instance_id)
+            if instance.get('State')['Name'] == 'running':
+                instance_id = instance["InstanceId"]
+                if "Tags" in instance:
+                    for tags in instance["Tags"]:
+                        if tags.get("Key") == "product":
+                            product = tags.get("Value")
+                            hosts[product] = hosts.get(product, [])
+                            if instance_id not in hosts[product]:
+                                hosts[product].append(instance_id)
     return hosts
 
 
