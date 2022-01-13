@@ -1,0 +1,58 @@
+#!/usr/bin/python3
+
+import shutil
+import socket
+import sys
+from pathlib import Path
+
+import requests
+import requests.packages.urllib3.util.connection as urllib3_cn
+
+API_URL = "https://api.1fichier.com/v1/download/get_token.cgi"
+
+
+def get_api_key():
+    with open(f"{Path.home()}/.1fichier.key") as f:
+        content = f.readline().rstrip()
+    return content
+
+
+def allowed_gai_family():
+    """
+    https://github.com/shazow/urllib3/blob/master/urllib3/util/connection.py
+    """
+    family = socket.AF_INET
+    if urllib3_cn.HAS_IPV6:
+        family = socket.AF_INET6  # force ipv6 only if it is available
+    return family
+
+
+def download_file(url, session, filename):
+    # local_filename = DIR + filename
+    with session.get(url, stream=True) as r:
+        with open(filename, "wb") as f:
+            shutil.copyfileobj(r.raw, f)
+        print(f"successfully writen to {filename}")
+
+
+def main(api_key, url, filename):
+    data = {"url": url}
+    headers = {"Authorization": f"Bearer {api_key}"}
+    session = requests.Session()
+    r = session.post(API_URL, json=data, headers=headers).json()
+    if r["status"] == "OK":
+        download_file(r["url"], session, filename)
+    else:
+        print(r)
+
+
+if __name__ == "__main__":
+    if len(sys.argv) < 3:
+        print("Please provide url and file name")
+        sys.exit(1)
+    else:
+        api_key = get_api_key()
+        urllib3_cn.allowed_gai_family = allowed_gai_family
+        url = sys.argv[1]
+        filename = sys.argv[2]
+        main(api_key, url, filename)
