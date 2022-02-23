@@ -2,6 +2,11 @@
 
 [ ! -r ~/.config/mbsyncrc ] && exit 0
 
+# No need to run if no key
+if ! gpg --card-status all | grep 612B82125CCAB524 > /dev/null; then
+    exit 0
+fi
+
 # Download new mail
 if ps -C mbsync > /dev/null; then
     exit 0
