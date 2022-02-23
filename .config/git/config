@@ -44,5 +44,5 @@
 [pull]
     rebase = false
 
-[includeIf "gitdir:~/WORK/blockfi/"]
-    path = ~/.config/git/config-blockfi
+[includeIf "gitdir:~/WORK/pro/"]
+    path = ~/.config/git/config-work
