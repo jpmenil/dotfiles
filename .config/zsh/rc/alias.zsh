@@ -34,7 +34,8 @@ alias abook="abook -C ~/.config/abook/abookrc --datafile ~/.config/abook/address
 alias config="git --git-dir=$HOME/WORK/jp/git/dotfiles/ --work-tree=$HOME"
 alias cpu_perf='echo performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor'
 alias docker='sudo docker'
-alias e="qemacs -nw --free-all"
+#alias e="qemacs -nw --free-all"
+alias e="emacsclient -nw -a="
 alias grep='grep --color=auto'
 alias mbsync='mbsync -c ~/.config/mbsyncrc'
 alias monip="curl ipv4.icanhazip.com"
