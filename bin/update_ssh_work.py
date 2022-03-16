@@ -11,8 +11,9 @@ ssh_conf_dir = f"{Path.home()}/.ssh/config.d"
 template = """
 Host {}.{}
      HostName {}
+     IdentityFile ~/.ssh/id_ed25519
      User ec2-user
-     ProxyCommand ~/bin/aws-ssm-ec2-proxy-command.sh %h %r %p ~/.ssh/id_rsa.pub
+     ProxyCommand ~/bin/aws-ssm-ec2-proxy-command.sh %h %r %p ~/.ssh/id_ed25519.pub
      StrictHostKeyChecking no
 """
 
