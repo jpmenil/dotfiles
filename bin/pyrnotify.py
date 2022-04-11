@@ -60,8 +60,12 @@ except ImportError as e:
 
 import os, sys, re
 import socket
-import subprocess
 import shlex
+
+if sys.platform == 'linux':
+    import subprocess
+if sys.platform == 'darwin':
+    from pync import Notifier
 
 SCRIPT_NAME    = "pyrnotify"
 SCRIPT_AUTHOR  = "Krister Svanlund <krister.svanlund@gmail.com>"
@@ -128,7 +132,10 @@ def accept_connections(s, timeout=None):
     if data:
         try:
             urgency, icon, title, body = shlex.split(data)
-            subprocess.call(["herbe", escape(title), escape(body)])
+            if sys.platform == 'linux':
+                subprocess.call(["herbe", escape(title), escape(body)])
+            if sys.platform == 'darwin':
+                Notifier.notify(escape(body), title=f'{escape(title)}', sound='off', appIcon='/Users/jenfi/bin/weechat.png', activate='com.apple.Terminal')
 
         except ValueError as e:
             print(e)

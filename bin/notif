@@ -1,0 +1,12 @@
+#!/bin/sh
+
+host="numenor"
+port=4321
+
+if ! ps aux | grep "$host" | grep "$port" | grep ssh > /dev/null; then
+    ssh -vv -fNqR "$port":localhost:"$port" "$host"
+fi
+
+if ! pgrep -f pyrnotify > /dev/null; then
+    python3 $HOME/bin/pyrnotify &
+fi
