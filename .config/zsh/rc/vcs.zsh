@@ -30,6 +30,14 @@
         [[ $more == 1 ]] || zle reset-prompt
     }
 
+    _jp_vcs_chpwd() {
+        vcs_info_msg_0_=
+    }
+    _jp_vcs_precmd() {
+        async_flush_jobs vcs_info
+        async_job vcs_info _jp_vcs_info $PWD
+    }
+
     autoload -Uz vcs_info
 
     zstyle ':vcs_info:*' enable git
@@ -56,10 +64,6 @@
     source $ZSH/third-party/async.zsh
     async_init
     _jp_vcs_async_start
-    add-zsh-hook precmd (){
-        async_job vcs_info _jp_vcs_info $PWD
-    }
-    add-zsh-hook chpwd (){
-        vcs_info_msg_0_=
-    }
+    add-zsh-hook precmd _jp_vcs_precmd
+    add-zsh-hook chpwd _jp_vcs_chpwd
 }
