@@ -1,3 +1,6 @@
 [submodule ".config/zsh/third-party/zsh-async"]
 	path = .config/zsh/third-party/zsh-async
 	url = git@github.com:mafredri/zsh-async.git
+[submodule ".config/zsh/third-party/zsh-autosuggestions"]
+	path = .config/zsh/third-party/zsh-autosuggestions
+	url = git@github.com:zsh-users/zsh-autosuggestions.git

@@ -34,3 +34,5 @@ setopt nobeep
 setopt print_exit_value
 # ask for confirmation for `rm *' or `rm path/*'
 #unsetopt rm_star_silent
+
+source $ZSH/third-party/zsh-autosuggestions.zsh
