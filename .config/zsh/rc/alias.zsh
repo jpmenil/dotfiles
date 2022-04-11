@@ -40,7 +40,6 @@ alias grep='grep --color=auto'
 alias mbsync='mbsync -c ~/.config/mbsyncrc'
 alias monip="curl ipv4.icanhazip.com"
 alias monip6="curl ipv6.icanhazip.com"
-alias notif='python ~/bin/pyrnotify.py 4321 & ssh -f -N -q -R 4321:localhost:4321 numenor'
 alias notmuch="notmuch --config ~/.config/notmuch-config"
 alias pass="PASSWORD_STORE_DIR=~/WORK/jp/git/password-store/ pass"
 alias rm_docker='docker ps -a | awk '\''{print $1}'\'' | grep -v CONTAINER | xargs docker rm'
