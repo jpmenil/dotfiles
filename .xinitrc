@@ -15,6 +15,7 @@ fi
 
 #xrandr --output eDP1 --mode 2560x1600 --dpi 227 &
 slstatus &
+~/bin/bt-alsa.sh &
 #picom &
 
 # Start the window manager
