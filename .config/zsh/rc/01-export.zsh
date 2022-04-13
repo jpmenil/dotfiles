@@ -7,7 +7,6 @@ export PAGER="less"
 export VISUAL="emacsclient -nw"
 export EDITOR=$VISUAL
 export XDG_CONFIG_HOME="$HOME/.config"
-export MOZ_X11_EGL=1
 
 # gpg & ssh
 if [ -z $SSH_TTY ]; then
