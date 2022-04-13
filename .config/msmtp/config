@@ -1,0 +1,39 @@
+defaults
+auth	on
+#tls	on
+tls_trust_file	/etc/ssl/certs/ca-certificates.crt
+#logfile	~/.msmtp.log
+
+############
+# Personal #
+############
+
+account personal
+tls     on
+host smtp.gmail.com
+port 587
+from jpmenil@gmail.com
+user jpmenil@gmail.com
+passwordeval "PASSWORD_STORE_DIR=~/WORK/jp/git/password-store/ pass google/mutt/password"
+
+##########
+# Orange #
+##########
+account orange
+tls on
+host smtp.wanadoo.fr
+port 587
+from jpmenil@wanadoo.fr
+user jpmenil@wanadoo.fr
+passwordeval "PASSWORD_STORE_DIR=~/WORK/jp/git/password-store/ pass orange/mutt/password"
+
+#######
+# Ovh #
+#######
+account ovh
+tls on
+host ssl0.ovh.net
+port 587
+from jpmenil@sandman.ovh
+user jpmenil@sandman.ovh
+passwordeval "PASSWORD_STORE_DIR=~/WORK/jp/git/password-store/ pass ovh/mutt/password"
