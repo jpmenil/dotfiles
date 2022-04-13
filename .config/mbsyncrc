@@ -1,0 +1,113 @@
+############
+# Personal #
+############
+
+IMAPAccount personal
+Host imap.gmail.com
+User jpmenil@gmail.com
+PassCmd "PASSWORD_STORE_DIR=~/WORK/jp/git/password-store/ pass google/mutt/password"
+SSLType IMAPS
+AuthMechs PLAIN
+PipelineDepth 1
+#CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+IMAPStore personal-remote
+Account personal
+
+MaildirStore personal-local
+Subfolders Verbatim
+# The trailing "/" is important
+Path ~/.mail/personal/
+Inbox ~/.mail/personal/Inbox
+
+Channel personal-drafts
+Far :personal-remote:"[Gmail]/Drafts"
+Near :personal-local:Drafts
+Create Near
+
+Channel personal-sent
+Far :personal-remote:"[Gmail]/Sent Mail"
+Near :personal-local:Sent
+Create Near
+
+Channel personal-spam
+Far :personal-remote:"[Gmail]/Spam"
+Near :personal-local:Spam
+Create Near
+
+Channel personal-trash
+Far :personal-remote:"[Gmail]/Trash"
+Near :personal-local:Trash
+Create Near
+
+Channel personal-inbox
+Far :personal-remote:
+Near :personal-local:
+Patterns * ![Gmail]* !Drafts !Sent !Spam !Trash
+Expunge Both
+Create Near
+Sync All
+SyncState *
+
+Group personal
+Channel personal-drafts
+Channel personal-sent
+Channel personal-spam
+Channel personal-trash
+Channel personal-inbox
+
+##########
+# Orange #
+##########
+
+IMAPAccount orange
+Host imap.orange.fr
+User jpmenil@wanadoo.fr
+PassCmd "PASSWORD_STORE_DIR=~/WORK/jp/git/password-store/ /usr/local/bin/pass orange/mutt/password"
+SSLType IMAPS
+PipelineDepth 1
+
+IMAPStore orange-remote
+Account orange
+
+MaildirStore orange-local
+Subfolders Verbatim
+# The trailing "/" is important
+Path ~/.mail/orange/
+Inbox ~/.mail/orange/Inbox
+
+Channel orange-drafts
+Far :orange-remote:"INBOX/DRAFT"
+Near :orange-local:Drafts
+Create Near
+
+Channel orange-sent
+Far :orange-remote:"INBOX/OUTBOX"
+Near :orange-local:Sent
+Create Near
+
+Channel orange-spam
+Far :orange-remote:"INBOX/QUARANTAINE"
+Near :orange-local:Spam
+Create Near
+
+Channel orange-trash
+Far :orange-remote:"INBOX/TRASH"
+Near :orange-local:Trash
+Create Near
+
+Channel orange-inbox
+Far :orange-remote:
+Near :orange-local:
+Patterns * !Drafts !Sent !Spam !Trash !DRAFT !OUTBOX !QUARANTAINE !TRASH
+Expunge Both
+Create Near
+Sync All
+SyncState *
+
+Group orange
+Channel orange-drafts
+Channel orange-sent
+Channel orange-spam
+Channel orange-trash
+Channel orange-inbox
