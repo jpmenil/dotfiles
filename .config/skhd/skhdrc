@@ -1,0 +1,2 @@
+alt - space : yabai -m window --toggle split
+cmd - return : /opt/homebrew/bin/wezterm
