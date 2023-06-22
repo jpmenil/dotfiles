@@ -1,6 +1,39 @@
+dynamic_title: true
 env:
   TERM: xterm-256color
+font:
+  size: 15.0
+  normal:
+    family: DejaVu Sans Mono
+    style: Book
+    bold_style: Bold
+    italic_style: Italic
+  #use_thin_strokes: true
+  scale_with_dpi: true
+live_config_reload: true
+mouse_bindings:
+  - { mouse: Middle, mods: Shift, action: PasteSelection }
+  - { mouse: Right,  mods: Shift, action: Paste }
+  - { mouse: Middle,  action: None }
+  - { mouse: Right,  action: None }
+selection:
+  save_to_clipboard: true
+shell:
+  program: /bin/zsh
+  args:
+    - -l
+    - -c
+    - "tmux"
+window:
+  #decorations: none
+  decorations: buttonless
+  startup_mode: Maximized
+
+import:
+  - ~/.config/alacritty/alacritty-theme/themes/base16_default_dark.yaml
+
 key_bindings:
+  - {key: N, mods: Command, action: CreateNewWindow}
   # Copy/Paste
   - { key: C, mods: Control|Shift, action: Copy }
   - { key: V, mods: Control|Shift, action: Paste }
@@ -108,28 +141,3 @@ key_bindings:
   - { key: LBracket,  mods: Alt,     chars: "\x1b[" }
   - { key: RBracket,  mods: Alt,     chars: "\x1b]" }
   - { key: Semicolon, mods: Alt, chars: "\x1b;" }
-font:
-  size: 14.0
-  normal:
-    family: DejaVu Sans Mono
-    style: Book
-    bold_style: Bold
-    italic_style: Italic
-  use_thin_strokes: true
-mouse_bindings:
-  - { mouse: Middle, mods: Shift, action: PasteSelection }
-  - { mouse: Right,  mods: Shift, action: Paste }
-  - { mouse: Middle,  action: None }
-  - { mouse: Right,  action: None }
-selection:
-  save_to_clipboard: true
-shell:
-  program: /bin/zsh
-  args:
-    - -l
-    - -c
-    - "tmux"
-window:
-  #decorations: none
-  decorations: buttonless
-  startup_mode: Maximized
