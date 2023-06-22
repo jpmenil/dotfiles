@@ -9,7 +9,7 @@ set realname = "Jean-Philippe Menil"
 set use_from = yes
 set use_envelope_from = yes
 # Hide host details.
-set hidden_host
+set hidden_host = yes
 # Include the message in replies
 set include   = yes
 set forward_quote = yes     # include original text on forward?
@@ -20,31 +20,30 @@ set mbox_type   = Maildir
 # directories and commands
 set mailcap_path        = ~/.config/neomutt/mailcap                 # entrys for filetypes
 set tmpdir              = ~/.cache/neomutt/temp                     # where to keep temp files
-set editor              = "qemacs"
+set editor              = "emacsclient -nw"
 set ispell              = "/usr/bin/aspell -e -c"                # use aspell as ispell
 set imap_peek           = no                                     # Gmail mark as read
 set sleep_time          = 0                                      # instantaneous mailbox change
 
 # main options
-unset imap_passive                                               # Allow Mutt to open a new IMAP connection automatically.
-set imap_keepalive      = 300                                    # Keep the IMAP connection alive by polling intermittently (time in seconds).
 set timeout             = 3                                      # idle time before scanning
 set mail_check          = 30                                     # How often to check for new mail (time in seconds).
-#set alias_file          = "~/.config/neomutt/aliases"
-#set display_filter      = '~/.config/neomutt/aliases.sh'
 set query_command       = "abook -C ~/.config/abook/abookrc --datafile ~/.config/abook/addressbook --mutt-query '%s'"              # When looking for contacts, use this command
 set sort_alias          = alias                                  # sort alias file by alias
 set reverse_alias                                                # show names from alias file in index
 unset move                                                       # gmail does that
-set delete                                                       # don't ask, just do
+set delete              = yes                                    # don't ask, just do
 unset confirmappend                                              # don't ask, just do!
 set quit                                                         # don't ask, just do!!
-unset mark_old                                                   # read/new is good enough for me
+set mark_old = no
 set beep_new                                                     # bell on new mails
 set pipe_decode                                                  # strip headers and eval mimes when piping
 set thorough_search                                              # strip headers and eval mimes before searching
 set text_flowed         = yes                                    # no hard breaks in quoted text
 unset help
+
+set header_cache = "~/.cache/neomutt/headers"
+set message_cachedir = "~/.cache/neomutt/messages"
 
 # attachments
 set forward_attachments = yes
@@ -60,13 +59,12 @@ set strict_threads      = yes
 set sort_browser        = reverse-date
 set sort_aux            = reverse-last-date-received
 set uncollapse_jump                                              # don't collapse on an unread message
-#set sort_re                                                      # thread based on regex
 set reply_regexp        = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
 
 # pager options
 set pager_index_lines   = 10                                     # number of index lines to show
 set pager_context       = 5                                      # number of context lines to show
-set pager_stop                                                   # don't go to next message automatically
+set pager_stop = yes                                             # don't go to next message automatically
 set menu_scroll                                                  # scroll in menus
 set smart_wrap                                                   # don't split words
 set tilde                                                        # show tildes like in vim
@@ -83,21 +81,16 @@ alternative_order text/plain text/html text/*
 # formats
 set date_format         = "%d/%m/%y at %I:%M%P"
 set index_format        = "%3C %?X?A& ? %S   %D  •  %-25.25L %s %> %c"
-#set index_format        = "%4C (%4c) %Z %?GI?%GI& ? %[%d/%b]  %-20.19F %?K?%15.14K&               ? %?M?(%3M)&     ? %?X?¤& ? %s %> %?g?%g?"
 set pager_format        = "Reading message %C of %m %> %lL [%P]" # pager statusbar
 set folder_format       = "%2C %t %N %8s %d %f"                  # mailbox list view
 set status_format       = " %?M?%M/?%m Mails %?n?%n new, ?%?u?%u unread, ?%?p?%p drafts, ?%?t?%t +tagged, ?%?d?%d deleted, ?[%f %l]  %?b?%b unread messages. ?%>  %V  [%P]"
-#set status_format='-%r-NeoMutt: %f [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? \
-#                   Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?l? %l?]---(%s/%S)-%>-(%P)---'
 set alias_format        = "%4n %t %-20a  %r"
 
-# notification
-#set new_mail_command    = "notify-send 'New Email' '%n new messages, %u unread.' &"
-
-#set arrow_cursor                                                 #  Show current mail with an arrow ("->")
 unset arrow_cursor                                               #  Show current mail with an inverse bar.
 
 # bindings
+# modify (notmuch/imap) tags
+bind index,pager \` modify-labels
 bind index g    noop
 bind index gg   first-entry
 bind index,pager X sidebar-toggle-virtual
@@ -111,23 +104,25 @@ bind index 1    noop
 bind index 2    noop
 bind index 3    noop
 bind index 4    noop
-macro index 1 '<sync-mailbox><refresh><enter-command>source ~/.config/neomutt/orange<enter><change-folder>!<enter>'
+macro index 1 '<sync-mailbox><refresh><enter-command>source ~/.config/neomutt/work<enter><change-folder>!<enter>'
 macro index 2 '<sync-mailbox><refresh><enter-command>source ~/.config/neomutt/personal<enter><change-folder>!<enter>'
-macro index 3 '<sync-mailbox><refresh><enter-command>source ~/.config/neomutt/work<enter><change-folder>!<enter>'
 
-#macro index c "<change-vfolder>?" "Change to vfolder overview"
-macro index A \
-    "<tag-pattern>~N<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" \
-    "mark all new as read"
+macro index K \
+   "<tag-pattern>~N<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" \
+   "mark all new as read"
 
-macro index S "<enter-command>set sort=reverse-date-sent<enter><enter-command>set sort_browser=reverse-date<enter><enter-command>set sort_aux=reverse-last-date-received<enter>"
+macro index,pager A "<modify-labels>+Jp -unread -inbox\n<enter>" "Toggle the 'jp' tag"
+macro index,pager d "<modify-labels>-inbox +Trash<enter>" "Send to trash"
+macro index,pager - "<modify-labels>+unread\n"               # tag as unread
+
 macro index E "<enter-command>set sort=threads<enter><enter-command>set sort_browser=reverse-date<enter><enter-command>set sort_aux=reverse-last-date-received<enter>"
-#macro index,pager U "<enter-command>set pipe_decode = yes<enter><pipe-message>urlview<enter><enter-command>set pipe_decode = no<enter>""view URLs"
+macro index I "<modify-labels>-inbox -unread"<enter>                 # removed from inbox
+macro index S "<enter-command>set sort=reverse-date-sent<enter><enter-command>set sort_browser=reverse-date<enter><enter-command>set sort_aux=reverse-last-date-received<enter>"
+
 macro index \cb |urlview\n
 macro pager \cb |urlview\n
 
-#source ~/.config/neomutt/aliases
 source ~/.config/neomutt/dracula
 source ~/.config/neomutt/gpgrc
 source ~/.config/neomutt/sidebar
-source ~/.config/neomutt/personal
+source ~/.config/neomutt/work

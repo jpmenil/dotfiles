@@ -16,9 +16,7 @@ set sidebar_indent_string="  "              # Indent with two spaces
 # Pretty line-drawing character
 set sidebar_folder_indent = yes
 set sidebar_indent_string = " "
-#set sidebar_format = "%B%?F? [%F]?%*"
-#set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
-set sidebar_format = "%B%* %?N?%N?"
+set sidebar_format = "%D%* %?N?%N?"
 set mail_check_stats = yes
 color sidebar_new color166 default
 
