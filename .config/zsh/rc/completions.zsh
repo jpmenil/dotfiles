@@ -40,11 +40,14 @@ zstyle ':completion:*:*:kill:*:processes' list-colors "=(#b) #([0-9]#)*=29=34"
 zstyle ':completion:*:*:killall:*' menu yes select
 zstyle ':completion:*:killall:*' force-list always
 
+zstyle ':completion:*:*:git-fetch:argument-rest:' tag-order '!remote-repositories'
+zstyle ':completion:*:*:git-pull:argument-1:' tag-order '!remote-repositories'
+
 # because I don't care about others
-users=(jenfi root)
+users=(jenfi jmenil root)
 zstyle ':completion:*' users $users
 
-_ssh_config_hosts=(${(s: :)${(ps:\t:)${(f)"$(<$HOME/.ssh/**/* | grep '^Host')"}#Host}#Hostname})
+_ssh_config_hosts=(${(s: :)${(ps:\t:)${(f)"$(<$HOME/.ssh/config <$HOME/.ssh/config.d/* </etc/ssh/ssh_config | grep '^Host')"}#Host}#Hostname})
 
 _custom_hosts=(
     "$_ssh_config_hosts[@]"

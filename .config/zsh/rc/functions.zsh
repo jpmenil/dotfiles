@@ -2,7 +2,7 @@
 
 # Functions
 
-function mfa () {
+function mfa_old () {
     case "$(uname -s)" in
         Darwin)
             oathtool --base32 --totp "$(pass show "$1"/2fa)" | pbcopy
@@ -14,6 +14,14 @@ function mfa () {
             echo "Not available at this time"
             ;;
     esac
+}
+
+function mfa_work () {
+    oathtool --base32 --totp "$(pass_work show "$1"/2fa)" | pbcopy
+}
+
+function mfa_perso () {
+    oathtool --base32 --totp "$(pass_perso show "$1"/2fa)" | pbcopy
 }
 
 function fk() {
@@ -58,4 +66,12 @@ function git_main_branch() {
         fi
     done
     echo master
+}
+
+function asn_byip() {
+    whois -h whois.arin.net "n $1" | grep -vE '^#|^$'
+}
+
+function asn_info {
+    whois -h whois.arin.net "a $1"
 }
