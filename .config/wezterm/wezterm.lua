@@ -32,14 +32,15 @@ config.colors = {
       }
    }
 }
-config.debug_key_events = true
+--config.debug_key_events = true
 config.enable_tab_bar = true
 config.font = wezterm.font 'DejaVu Sans Mono'
 config.font_size = 15.0
 config.hide_tab_bar_if_only_one_tab = true
 config.initial_cols = 255
 config.initial_rows = 75
-config.selection_word_boundary = ' \t\n*?[]~&;!#$%^(){}<>:=̈\"'
+config.key_map_preference = "Physical"
+config.selection_word_boundary = ' \t\n*?[]~&;!#$%^(){}<>:=̈\"\''
 config.show_new_tab_button_in_tab_bar = false
 config.use_fancy_tab_bar = false
 config.use_ime = true
@@ -54,6 +55,14 @@ config.keys = {
       mods = 'SHIFT|CTRL',
       action = act.ToggleFullScreen,
    },
+   {
+      key = '5',
+      mods = 'SHIFT|ALT',
+      action = act.Multiple {
+         act.SendKey { mods = 'ALT', key = 'x' },
+         act.SendKey { key = '%' },
+      },
+   }
 }
 
 local copy_mode = wezterm.gui.default_key_tables().copy_mode
